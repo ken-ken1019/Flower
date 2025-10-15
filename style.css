@@ -1,0 +1,99 @@
+body {
+  background-image: url('pics/pinkbg.jpg'); /* your background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.rose {
+  position: relative;
+  width: 120px;
+  height: 300px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.rose:hover {
+  transform: scale(1.05);
+}
+
+/* Petals */
+.petal {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  background: #e91e63;
+  border-radius: 60% 60% 0 60%;
+  top: 0;
+  left: 50%;
+  transform-origin: bottom center;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.petal:nth-child(1) { transform: translateX(-50%) rotate(0deg); }
+.petal:nth-child(2) { transform: translateX(-50%) rotate(45deg); }
+.petal:nth-child(3) { transform: translateX(-50%) rotate(-45deg); }
+.petal:nth-child(4) { transform: translateX(-50%) rotate(90deg); opacity: 0.8; }
+.petal:nth-child(5) { transform: translateX(-50%) rotate(-90deg); opacity: 0.8; }
+
+/* Center */
+.center {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(#b0003a, #6a0030);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Stem */
+.stem {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 200px;
+  background: #2e7d32;
+  border-radius: 6px;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  bottom: 100px;
+  width: 60px;
+  height: 40px;
+  background: #43a047;
+  border-radius: 50% 50% 0 50%;
+}
+
+.leaf.left {
+  left: calc(50% - 70px);
+  transform: rotate(-25deg);
+}
+
+.leaf.right {
+  right: calc(50% - 70px);
+  transform: rotate(25deg) scaleX(-1);
+}
+
+/* Bloom animation */
+.bloom .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg) translateY(-20px) scale(1.2); }
+.bloom .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg) translateY(-20px) scale(1.2); }
+.bloom .petal:nth-child(3) { transform: translateX(-50%) rotate(-45deg) translateY(-20px) scale(1.2); }
+.bloom .petal:nth-child(4) { transform: translateX(-50%) rotate(90deg) translateY(-20px) scale(1.1); }
+.bloom .petal:nth-child(5) { transform: translateX(-50%) rotate(-90deg) translateY(-20px) scale(1.1); }
+
+.bloom .center {
+  box-shadow: 0 0 20px 10px rgba(233, 30, 99, 0.5);
+}
