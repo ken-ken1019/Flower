@@ -1,4 +1,3 @@
-// 🌸 Open main modal
 function openModal(imgSrc, smallImgSrc, description) {
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modalImg");
@@ -11,14 +10,12 @@ function openModal(imgSrc, smallImgSrc, description) {
   caption.innerHTML = description;
 }
 
-// 🌹 Close main modal
 function closeModal(event) {
   if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
     document.getElementById("modal").style.display = "none";
   }
 }
 
-// 💮 Open inner zoom
 function openInnerZoom(event) {
   event.stopPropagation();
   const innerModal = document.getElementById("innerModal");
@@ -27,7 +24,6 @@ function openInnerZoom(event) {
   innerModal.style.display = "flex";
 }
 
-// 🌼 Close inner zoom
 function closeInnerModal(event) {
   if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
     document.getElementById("innerModal").style.display = "none";
