@@ -83,6 +83,7 @@ body {
   transform: rotate(25deg) scaleX(-1);
 }
 
+
 .bloom .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg) translateY(-20px) scale(1.2); }
 .bloom .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg) translateY(-20px) scale(1.2); }
 .bloom .petal:nth-child(3) { transform: translateX(-50%) rotate(-45deg) translateY(-20px) scale(1.2); }
