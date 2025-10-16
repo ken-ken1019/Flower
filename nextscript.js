@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Modal functions ---
   function openModal(imgSrc, smallImgSrc, description) {
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modalImg");
@@ -35,13 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Expose globally
   window.openModal = openModal;
   window.closeModal = closeModal;
   window.openInnerZoom = openInnerZoom;
   window.closeInnerModal = closeInnerModal;
 
-  // --- Envelope popup ---
   const backButton = document.getElementById("backButton");
   const envelopePopup = document.getElementById("envelopePopup");
   const openFlower = document.getElementById("openFlower");
@@ -60,10 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- Background Music ---
   const music = document.getElementById("bgMusic");
   if (music) {
-    // Only play once per visit, start when user interacts
     const startMusic = () => {
       if (music.paused) {
         music.play().catch(() => console.log("Autoplay blocked — user must click."));
@@ -73,5 +68,5 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("click", startMusic);
   }
 
-  console.log("✅ nextscript.js loaded — music plays fresh each visit, no duplication.");
+  console.log("nextscript.js loaded — music plays fresh each visit, no duplication.");
 });

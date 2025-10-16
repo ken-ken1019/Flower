@@ -23,7 +23,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Petals */
 .petal {
   position: absolute;
   width: 60px;
@@ -42,7 +41,6 @@ body {
 .petal:nth-child(4) { transform: translateX(-50%) rotate(90deg); opacity: 0.8; }
 .petal:nth-child(5) { transform: translateX(-50%) rotate(-90deg); opacity: 0.8; }
 
-/* Center */
 .center {
   position: absolute;
   top: 10px;
@@ -55,7 +53,6 @@ body {
   z-index: 1;
 }
 
-/* Stem */
 .stem {
   position: absolute;
   bottom: 0;
@@ -67,7 +64,6 @@ body {
   border-radius: 6px;
 }
 
-/* Leaves */
 .leaf {
   position: absolute;
   bottom: 100px;
@@ -87,7 +83,6 @@ body {
   transform: rotate(25deg) scaleX(-1);
 }
 
-/* Bloom animation */
 .bloom .petal:nth-child(1) { transform: translateX(-50%) rotate(0deg) translateY(-20px) scale(1.2); }
 .bloom .petal:nth-child(2) { transform: translateX(-50%) rotate(45deg) translateY(-20px) scale(1.2); }
 .bloom .petal:nth-child(3) { transform: translateX(-50%) rotate(-45deg) translateY(-20px) scale(1.2); }
