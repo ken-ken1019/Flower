@@ -87,5 +87,5 @@ document.addEventListener("DOMContentLoaded", () => {
     music.addEventListener("pause", () => localStorage.setItem("musicPlaying", "false"));
   }
 
-  console.log("✅ nextscript.js initialized and music continuation is active.");
+  console.log("nextscript.js initialized and music continuation is active.");
 });
