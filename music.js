@@ -1,42 +1,40 @@
-// music.js
 (function() {
-  // Prevent creating multiple players
+  // Prevent multiple instances
   if (window._musicInitialized) return;
   window._musicInitialized = true;
 
-  // Create persistent audio element
+  // Create the audio element
   const audio = document.createElement("audio");
   audio.id = "bgMusic";
-  audio.src = "pics/daylight.mp3"; // <-- change to your music file
+  audio.src = "pics/daylight.mp3"; // ← your music file path
   audio.loop = true;
   audio.volume = 0.5;
 
   // Append to the page
   document.body.appendChild(audio);
 
-  // Try to play when the user clicks anywhere
-  document.addEventListener("click", () => {
+  // Play music after any user interaction (to bypass autoplay restrictions)
+  const startMusic = () => {
     if (audio.paused) {
-      audio.play().catch(() => {});
+      audio.play().catch(() => {
+        console.log("Autoplay blocked — waiting for user interaction.");
+      });
     }
+    document.removeEventListener("click", startMusic);
+  };
+  document.addEventListener("click", startMusic);
+
+  // Optional: fade in when it starts (for smoother effect)
+  audio.addEventListener("play", () => {
+    audio.volume = 0;
+    const fadeIn = setInterval(() => {
+      if (audio.volume < 0.5) {
+        audio.volume = Math.min(audio.volume + 0.05, 0.5);
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 100);
   });
 
-  // Store global reference
-  window.bgMusic = audio;
-
-  // --- Music play state only lasts during this browser session ---
-  // Keep music playing between pages
-  sessionStorage.setItem("musicPlaying", "true");
-
-  // Try to resume if coming from another page in same session
-  if (sessionStorage.getItem("musicPlaying") === "true") {
-    audio.play().catch(() => {});
-  }
-
-  // If user closes the tab, music will reset next time (sessionStorage clears)
-  window.addEventListener("beforeunload", () => {
-    sessionStorage.removeItem("musicPlaying");
-  });
-
-  console.log("Background music initialized for this session.");
+  console.log("Background music initialized (plays only on this page).");
 })();

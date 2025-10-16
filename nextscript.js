@@ -60,32 +60,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (openFlower) {
     openFlower.addEventListener("click", () => {
-      // Keep music playing when going back
       envelopePopup.style.display = "none";
       window.location.href = "index.html";
     });
   }
 
-  // --- Music continuation ---
+  // --- Music (plays only on this page) ---
   const music = document.getElementById("bgMusic");
   if (music) {
-    const wasPlaying = localStorage.getItem("musicPlaying") === "true";
-    const lastTime = parseFloat(localStorage.getItem("musicTime")) || 0;
+    // Wait for user interaction to start (avoids autoplay block)
+    const startMusic = () => {
+      if (music.paused) {
+        music.play().catch(() => console.log("Autoplay blocked — waiting for user click"));
+      }
+      document.removeEventListener("click", startMusic);
+    };
+    document.addEventListener("click", startMusic);
 
-    music.currentTime = lastTime;
-    if (wasPlaying) {
-      music.play().catch(() => console.log("Autoplay blocked — will resume on user click"));
-    }
-
-    // Save time on unload
-    window.addEventListener("beforeunload", () => {
-      localStorage.setItem("musicTime", music.currentTime);
-    });
-
-    // Save play/pause state
-    music.addEventListener("play", () => localStorage.setItem("musicPlaying", "true"));
-    music.addEventListener("pause", () => localStorage.setItem("musicPlaying", "false"));
+    console.log("Music initialized (plays only while on this page).");
   }
 
-  console.log("nextscript.js initialized and music continuation is active.");
+  console.log("nextscript.js initialized (no music continuation).");
 });
