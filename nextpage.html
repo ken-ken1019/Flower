@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="nextstyle.css">
 </head>
 <body>
+  <!-- 🎵 Background Music (persistent through localStorage) -->
+  <audio id="bgMusic" loop>
+    <source src="pics/daylight.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="content">
     <h1>The Rose Has Bloomed 🌹</h1>
     <p>Just like a flower, our stories unfold softly with time — until one day, they bloom into something beautifully unforgettable.</p>
@@ -24,23 +29,23 @@
         <img src="pics/hk.jpg" alt="Rose 3">
       </div>
 
-      <div class="photo" onclick="openModal('pics/sup.jpg', 'pics/picts.jpg', 'Another picture-taking, but this time we had a supportive audience HAHAHA May random guy na nagsabing, ‘Picturan ko kayo’ Ang ganda rin nung map dito, Para tayong mga geng geng dito eh')">
+      <div class="photo" onclick="openModal('pics/sup.jpg', 'pics/picts.jpg', 'Another picture-taking, but this time we had a supportive audience HAHAHA May random guy na nagsabing, ‘Picturan ko kayo’. Ang ganda rin nung map dito, para tayong mga geng geng dito eh.')">
         <img src="pics/sup.jpg" alt="Rose 4">
       </div> 
       
-      <div class="photo" onclick="openModal('pics/pbooth.jpg', 'pics/booth.jpg', 'This was our first official couple plushie together mewhehw I love how it all started. nagpa-screenshot ka that time and I had no idea it would turn into an inspo aikfjaw. It ended so well, ang cute nung kinalabasan And ayan na yung lagi nating ginagamit hehe. Also, ang cute nung photobooth game na to huhu, sobraaa. our pics here ang cu-cuteee')">
+      <div class="photo" onclick="openModal('pics/pbooth.jpg', 'pics/booth.jpg', 'This was our first official couple plushie together mewhehw. I love how it all started — nagpa-screenshot ka that time and I had no idea it would turn into an inspo. It ended so well, ang cute nung kinalabasan! Also, ang cute nung photobooth game na to huhu. Our pics here ang cu-cuteee!')">
         <img src="pics/pbooth.jpg" alt="Rose 5">
       </div>      
 
-      <div class="photo" onclick="openModal('pics/hart.jpg', 'pics/dance.jpg', 'Ang solid nung pagkaka-pic dito, angas nung vibe nung picture. Diba diba aminin mo')">
+      <div class="photo" onclick="openModal('pics/hart.jpg', 'pics/dance.jpg', 'Ang solid nung pagkaka-pic dito, angas nung vibe nung picture. Diba diba aminin mo?')">
         <img src="pics/hart.jpg" alt="Rose 6">
       </div>   
       
-      <div class="photo" onclick="openModal('pics/camp.jpg', 'pics/campwood.jpg', 'Ang ganda nung shot mo dito, and tanda ko pa yung game na to. nag talo tayo about sa game na to, nalimutan ko lang yung reason HAHAHHA. Sadly, hindi umuso yung laro, maganda pa naman')">
+      <div class="photo" onclick="openModal('pics/camp.jpg', 'pics/campwood.jpg', 'Ang ganda nung shot mo dito, and tanda ko pa yung game na to. Nag-talo tayo about sa game na to, nalimutan ko lang yung reason HAHAHHA. Sadly, hindi umuso yung laro, maganda pa naman.')">
         <img src="pics/camp.jpg" alt="Rose 7">
       </div> 
 
-      <div class="photo" onclick="openModal('pics/misuki.jpg', 'pics/suki.png', 'And yet, here we are — you carrying me in every hiking game we’ve played, still counting, and still taking the path together')">
+      <div class="photo" onclick="openModal('pics/misuki.jpg', 'pics/suki.png', 'And yet, here we are — you carrying me in every hiking game we’ve played, still counting, and still taking the path together.')">
         <img src="pics/misuki.jpg" alt="Rose 8">
       </div> 
     </div>
@@ -53,7 +58,8 @@
       <div class="envelope-flap"></div>
       <div class="envelope-body"></div>
       <div class="letter">
-        <p>Before you go back...<br><br>thank you for sharing this memory with me. Every moment with you, no matter how small or simple it may seem, is a piece of our long, beautiful journey together. I treasure every laugh, every adventure, and every quiet second by your side. Being with you makes everything brighter, and I can’t wait to keep making more memories with you bebe 🌷 </p>
+        <p>Before you go back...<br><br>
+        Thank you for sharing this memory with me. Every moment with you, no matter how small or simple it may seem, is a piece of our long, beautiful journey together. I treasure every laugh, every adventure, and every quiet second by your side. Being with you makes everything brighter — and I can’t wait to keep making more memories with you, bebe 🌷</p>
         <button id="openFlower">mwaa!🌸</button>
       </div>
     </div>
@@ -74,5 +80,7 @@
   </div>
 
   <script src="nextscript.js"></script>
+  <script src="music.js" defer></script>
+
 </body>
 </html>
